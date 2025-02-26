@@ -1,6 +1,13 @@
+using BalticAbode_Dapper_Api.Models.DapperContext;
+using BalticAbode_Dapper_Api.Repositories.CategoryRepository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddTransient<Context>();
+builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddSingleton<Context>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
