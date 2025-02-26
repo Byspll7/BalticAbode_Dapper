@@ -42,8 +42,8 @@ namespace BalticAbode_Dapper_Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(int id)
         {
-            var value =  _categoryRepository.GetCategory(id);
-            return Ok(value);
+            var values =  _categoryRepository.GetCategory(id);
+            return Ok(values);
         }
         
 
