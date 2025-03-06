@@ -44,12 +44,6 @@ namespace BalticAbode_Dapper_Api.Controllers
         {
             var values =  await _categoryRepository.GetCategory(id);
             return Ok(values);
-        }
-        
-
-
-        
-
-          
+        }         
     }
 }
