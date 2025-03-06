@@ -1,5 +1,6 @@
     using BalticAbode_Dapper_Api.Models.DapperContext;
 using BalticAbode_Dapper_Api.Repositories.AboutRepository;
+using BalticAbode_Dapper_Api.Repositories.BottomGridRepository;
 using BalticAbode_Dapper_Api.Repositories.CategoryRepository;
 using BalticAbode_Dapper_Api.Repositories.ProductRepository;
 using BalticAbode_Dapper_Api.Repositories.ServiceRepository;
@@ -13,6 +14,7 @@ builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IAboutDetailRepository, AboutDetailRepository>();
 builder.Services.AddTransient<IServiceRepository, ServiceRepository>();
+builder.Services.AddTransient<IBottomGridRepository, BottomGridRepository>();
 
 
 builder.Services.AddControllers();
