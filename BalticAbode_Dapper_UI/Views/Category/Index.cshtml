@@ -12,31 +12,31 @@
         <h6 class="mb-4">Responsive Table</h6>
         <div class="table-responsive">
             <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Status></th>
-                        <th scope="col">Delete</th>
-                        <th scope="col">Update</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach(var item in Model)
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
                             {
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>@item.CategoryId</td>
+                                    <th scope="row">@item.CategoryId</th>
                                     <td>@item.CategoryName</td>
                                     <td>@item.CategoryStatus</td>
-                                    <td><a href="#" class="btn btn-outline-danger">Delete</a></td>
-                                    <td><a href="#" class="btn btn-outline-success">Update</a></td>
+                                    <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger">Delete</a></td>
+                                    <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-outline-success">Update</a></td>
                                 </tr>
                             }
-                </tbody>
-            </table>
-          </div>
-       </div>
+                        </tbody>
+                    </table>
+                    <a href="/Category/CreateCategory/" class="btn btn-outline-info">New Category</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
