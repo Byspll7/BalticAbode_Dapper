@@ -113,7 +113,7 @@ namespace BalticAbode_Dapper_Api.Repositories.StatisticsRepositories
 
         public string EmployeeNameByMaxProductCount()
         {
-            string query = "Select Name,Count(*) 'product_count' From Product Inner Join Employee On Product.EmployeeId=Employee.EmployeeId Group By Name Order By product_count Desc";
+            string query = "Select EmployeeName,Count(*) 'product_count' From Product Inner Join Employee On Product.EmployeeId=Employee.EmployeeId Group By Name Order By product_count Desc";
             using (var connection = _context.CreateConnection())
             {
                 var values = connection.QueryFirstOrDefault<string>(query);
