@@ -30,7 +30,7 @@ namespace BalticAbode_Dapper_Api.Controllers
             _aboutDetailRepository.CreateAboutDetail(createAboutDetailDto);
             return Ok("About section was added succefully");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAboutDetail(int id)
         {
             _aboutDetailRepository.DeleteAboutDetail(id);

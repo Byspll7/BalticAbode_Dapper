@@ -84,13 +84,6 @@ namespace BalticAbode_Dapper_UI.Controllers
             ViewBag.differentCityCount = jsonData9;
             #endregion
 
-            //#region DifferentCityCount  
-            //var client9 = _httpClientFactory.CreateClient();
-            //var responseMessage9 = await client9.GetAsync("https://localhost:44348/api/Statistics/DifferentCityCount");
-            //var jsonData9 = await responseMessage9.Content.ReadAsStringAsync();
-            //ViewBag.differentCityCount = jsonData9;
-            //#endregion
-
             #region LastProductPrice  
             var client10 = _httpClientFactory.CreateClient();
             var responseMessage10 = await client10.GetAsync("https://localhost:44348/api/Statistics/LastProductPrice");
