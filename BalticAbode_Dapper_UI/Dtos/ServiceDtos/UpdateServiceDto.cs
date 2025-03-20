@@ -1,6 +1,6 @@
-﻿namespace BalticAbode_Dapper_UI.Dtos.AboutDtos
+﻿namespace BalticAbode_Dapper_UI.Dtos.ServiceDtos
 {
-    public class ResultServiceDto
+    public class UpdateServiceDto
     {
         public int ServiceID { get; set; }
         public string ServiceName { get; set; }
