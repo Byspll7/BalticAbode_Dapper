@@ -6,9 +6,9 @@ namespace BalticAbode_Dapper_Api.Repositories.BottomGridRepository
     public interface IBottomGridRepository
     {
         Task<List<ResultBottomGridDto>> GetAllBottomGridAsync();
-        void CreateBottomGrid(CreateBottomGridDto createBottomGridDto);
+        void CreateBottomGridAsync(CreateBottomGridDto createBottomGridDto);
         void DeleteBottomGrid(int id);
         void UpdateBottomGrid(UpdateBottomGridDto updateBottomGridDto);
-        Task<GetButtomGridDto> GetService(int id);
+        Task<GetBottomGridDto> GetBottomGrid(int id);
     }
 }
