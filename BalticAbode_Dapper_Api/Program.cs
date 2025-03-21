@@ -8,6 +8,7 @@ using BalticAbode_Dapper_Api.Repositories.ProductRepository;
 using BalticAbode_Dapper_Api.Repositories.ServiceRepository;
 using BalticAbode_Dapper_Api.Repositories.StatisticsRepositories;
 using BalticAbode_Dapper_Api.Repositories.TestimonialRepository;
+using RealEstate_Dapper_Api.Repositories.PopularLocationRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
