@@ -23,7 +23,8 @@
                                 <th scope="col">Delete</th>
                                 <th scope="col">Update</th>
                                 <th scope="col">View on Site</th>
-@*                                 <th scope="col">Deal of the Day</th>
+                                <th scope="col">Today's deal</th>
+@*                                
  *@                            </tr>
                         </thead>
                         <tbody>
@@ -39,6 +40,16 @@
                                     <td><a href="/Product/DeleteProduct/@item.productId" class="btn btn-outline-danger">Delete</a></td>
                                     <td><a href="/Product/UpdateProduct/@item.productId" class="btn btn-outline-success">Update</a></td>
                                     <td><a href="/Product/ProductDetail/@item.productId" class="btn btn-outline-primary">View</a></td>
+                                    <td>
+                                        @if (item.dealOfTheDay==true)
+                                        {
+                                           <a href="/Product/ProductDetail/@item.productId" class="btn btn-outline-danger">Passive</a>
+                                        }
+                                        @if (item.dealOfTheDay == false)
+                                        {
+                                         <a href="/Product/ProductDetail/@item.productId" class="btn btn-outline-secondary">Active</a>
+                                        }                                       
+                                    </td>
                                 </tr>
                             }
                         </tbody>
