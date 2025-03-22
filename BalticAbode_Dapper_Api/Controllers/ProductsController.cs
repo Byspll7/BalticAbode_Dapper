@@ -27,5 +27,19 @@ namespace BalticAbode_Dapper_Api.Controllers
             var values = await _productRepository.GetAllProductWithCategoryAsync();
             return Ok(values);
         }
+
+        [HttpGet("ProductDealOfTheDayStatusChangeTotTrue/{id}")]
+        public async Task<IActionResult> ProductDealOfTheDayStatusChangeTotTrue(int id)
+        {
+            _productRepository.ProductDealOfTheDayStatusChangeTotTrue(id);
+            return Ok("Ads has been added successfully");
+        }
+
+        [HttpGet("ProductDealOfTheDayStatusChangeToFalse/{id}")]
+        public async Task<IActionResult> ProductDealOfTheDayStatusChangeToFalse (int id)
+        {
+            _productRepository.ProductDealOfTheDayStatusChangeTotTrue(id);
+            return Ok("Ads has been updated successfully");
+        }
     }
 }

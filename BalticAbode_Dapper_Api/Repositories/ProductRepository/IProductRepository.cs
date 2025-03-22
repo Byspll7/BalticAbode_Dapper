@@ -6,7 +6,7 @@ namespace BalticAbode_Dapper_Api.Repositories.ProductRepository
     {
         Task<List<ResultProductDto>> GetAllProductAsync();
         Task<List<ResultProductWithCategoryDto>> GetAllProductWithCategoryAsync();
-
-        
+        void ProductDealOfTheDayStatusChangeTotTrue(int id);
+        void ProductDealOfTheDayStatusChangeToFalse(int id);
     }
 }
