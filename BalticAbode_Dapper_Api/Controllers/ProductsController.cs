@@ -41,5 +41,12 @@ namespace BalticAbode_Dapper_Api.Controllers
             _productRepository.ProductDealOfTheDayStatusChangeTotTrue(id);
             return Ok("Ads has been updated successfully");
         }
+        [HttpGet("Last5ProductList")]
+        public async Task<IActionResult> Last5ProductList()
+        {
+            var values = await _productRepository.GetLast5ProductAsync();
+            return Ok(values);
+        }
+
     }
 }

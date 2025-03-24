@@ -35,6 +35,16 @@ namespace BalticAbode_Dapper_Api.Repositories.ProductRepository
             }
         }
 
+        public async Task<List<ResultProductDto>> GetLast5ProductAsync()
+        {
+            string query = "select top(5) * from Product Where Type='Rent' Order By ProductID desc";
+            using(var connection =_context.CreateConnection())
+            {
+                var values = await connection.QueryAsync<ResultProductDto>(query);
+                return values.ToList();
+            }   
+        }
+
         public  async void ProductDealOfTheDayStatusChangeToFalse(int id)
         {
             string query = "update Product set DealOfTheDay = 0 where ProductID = @ProductID";

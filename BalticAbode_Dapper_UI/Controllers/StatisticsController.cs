@@ -41,7 +41,6 @@ namespace BalticAbode_Dapper_UI.Controllers
             ViewBag.avarageProductPriceByRent = jsonData3;
             #endregion
 
-
             #region AvarageProductPriceBySale  
             var client4 = _httpClientFactory.CreateClient();
             var responseMessage4 = await client4.GetAsync("https://localhost:44348/api/Statistics/AverageProductPriceBySale");

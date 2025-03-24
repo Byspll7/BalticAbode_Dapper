@@ -1,0 +1,44 @@
+﻿@model List<ResultProductDto>
+@{
+    int count = 0;
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Last Transactions</h6>
+            <a href="/Product/Index">View all</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">City</th>
+                        <th scope="col"">Address</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td>@count</td>
+                           <td>00.00.0000</td>
+                            <td>@item.title</td>
+                            <td>@item.city</td>
+                            <td>@item.address</td>
+                            <td>@item.price </td>
+                            <td><a class="btn btn-sm btn-primary" href="">View</a></td>
+                        </tr>
+                    }           
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
