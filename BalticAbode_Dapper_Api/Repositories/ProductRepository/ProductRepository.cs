@@ -35,12 +35,12 @@ namespace BalticAbode_Dapper_Api.Repositories.ProductRepository
             }
         }
 
-        public async Task<List<ResultProductDto>> GetLast5ProductAsync()
+        public async Task<List<ResultLast5ProductWithCategoryDto>> GetLast5ProductAsync()
         {
-            string query = "select top(5) * from Product Where Type='Rent' Order By ProductID desc";
+            string query = " Select top(5) ProductID,Title,Price,City,District,ProductCategory,CategoryName,AdvertisementDay From Product inner join Category On Product.ProductCategory=Category.CategoryID Where Type='Rent' Order By ProductID Desc";
             using(var connection =_context.CreateConnection())
             {
-                var values = await connection.QueryAsync<ResultProductDto>(query);
+                var values = await connection.QueryAsync<ResultLast5ProductWithCategoryDto>(query);
                 return values.ToList();
             }   
         }
@@ -66,6 +66,5 @@ namespace BalticAbode_Dapper_Api.Repositories.ProductRepository
                 await connection.ExecuteAsync(query, parameters);
             }
         }
-
     }
 }

@@ -1,4 +1,4 @@
-﻿@model List<ResultProductDto>
+﻿@model List<ResultLast5ProudctWithCategory>
 @{
     int count = 0;
 }
@@ -28,11 +28,11 @@
                         count++;
                         <tr>
                             <td>@count</td>
-                           <td>00.00.0000</td>
-                            <td>@item.title</td>
-                            <td>@item.city</td>
-                            <td>@item.address</td>
-                            <td>@item.price </td>
+                            <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                            <td>@item.Title</td>
+                            <td>@item.City</td>
+                            <td>@item.CategoryName</td>
+                            <td>@item.Price €</td>
                             <td><a class="btn btn-sm btn-primary" href="">View</a></td>
                         </tr>
                     }           
